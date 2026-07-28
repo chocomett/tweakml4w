@@ -49,7 +49,7 @@ Use **Manual Partitioning**.
 | Mount Point | Size | Filesystem |
 | ------------ | ---- | ---------- |
 | `/boot` | 1 GiB | FAT32 |
-| `swap` | Match RAM (e.g. 8 GiB) | Linux Swap |
+| `swap` | Match RAM | Linux Swap |
 | `/` | Remaining Space | Ext4 |
 
 Example (8 GB RAM):
@@ -60,37 +60,27 @@ Example (8 GB RAM):
 | Swap | 8 GiB |
 | Root | Remaining Disk |
 
----
-
 ### Alternate Layout (Using zram)
-
-If using **zram**, a dedicated swap partition is unnecessary.
 
 | Mount Point | Size | Filesystem |
 | ------------ | ---- | ---------- |
 | `/boot` | 1 GiB | FAT32 |
 | `/` | Remaining Space | Ext4 |
 
-zram will be configured after installation.
+zram will be configured later.
 
 ---
 
 ## Bootloader
 
-- **Systemd-boot** → Single boot system
-- **GRUB** → Dual boot or multi boot system
+- Systemd-boot → Single Boot
+- GRUB → Dual Boot / Multi Boot
 
 ---
 
 ## Hostname
 
 Choose your preferred hostname.
-
-Example:
-
-```
-arch
-```
 
 ---
 
@@ -129,11 +119,9 @@ Enable:
 
 ---
 
-## Desktop Environment
+## Desktop
 
 - None
-
-ML4W will be installed after the base system.
 
 ---
 
@@ -141,11 +129,7 @@ ML4W will be installed after the base system.
 
 Review all settings.
 
-Select:
-
-```
-Install
-```
+Select **Install**.
 
 Wait until installation finishes.
 
@@ -167,7 +151,7 @@ Update the system.
 sudo pacman -Syu
 ```
 
-Install essential packages.
+Install required packages.
 
 ```bash
 sudo pacman -S \
@@ -177,24 +161,6 @@ curl \
 wget \
 zip \
 unzip
-```
-
-Install Paru.
-
-```bash
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si
-```
-
-## Install Essential Applications
-
-Install the applications I use on every fresh installation.
-
-```bash
-paru -S \
-google-chrome \
-visual-studio-code-bin
 ```
 
 ---
