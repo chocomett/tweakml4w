@@ -38,12 +38,18 @@ Final result includes:
 │   ├── 05-multimedia-tools.md
 │   ├── 06-fonts.md
 │   ├── 07-development-setup.md
-│   └── 08-productivity-setup.md
+│   ├── 08-productivity-setup.md
+│   └── development
+│       ├── 01-nodejs-nvm.md
+│       ├── 02-postgresql.md
+│       ├── 03-php.md
+│       └── 04-docker.md
 │
 └── scripts
-    ├── screenshot.sh
+    ├── custom-screenshot.sh
     └── ...
 ```
+
 
 # References
 
