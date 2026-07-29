@@ -1,53 +1,208 @@
-# 🐧 tweakml4w
+# 🐧 01. Arch Linux Installation
 
-> My personal Arch Linux setup and development handbook.
+This guide covers my standard Arch Linux installation before installing ML4W Dotfiles.
 
-[![Arch Linux](https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white)](https://archlinux.org/)
-[![Hyprland](https://img.shields.io/badge/Hyprland-58E1FF?style=for-the-badge)](https://hypr.land/)
-[![ML4W](https://img.shields.io/badge/ML4W-Dotfiles-blue?style=for-the-badge)](https://www.ml4w.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
-
-Personal documentation for installing Arch Linux from scratch with ML4W Dotfiles and setting up my complete development environment.
+**⏱️ Estimated Time:** 20–40 minutes
 
 ---
 
-## ✨ Features
+## Step 1. Boot the Installation Media
 
-- 🐧 Arch Linux Installation
-- 🎨 ML4W Dotfiles
-- 🖥️ SDDM Setup
-- ⌨️ Custom Keybindings
-- 🎬 Multimedia Tools
-- 🔤 Fonts
-- 💻 Development Environment
-- 🚀 Productivity Applications
+Boot the latest Arch Linux ISO in **UEFI mode**.
+
+Verify your internet connection.
+
+```bash
+ping archlinux.org
+```
+
+For a Wi-Fi connection, use:
+
+```bash
+iwctl
+```
 
 ---
 
-## 📂 Repository Structure
+## Step 2. Start the Installer
+
+Launch the Arch Linux installer.
+
+```bash
+archinstall
+```
+
+---
+
+## Step 3. Configure the Installation
+
+### Language
+
+- English
+
+### Mirrors
+
+- Indonesia
+
+### Disk Layout
+
+Use **Manual Partitioning**.
+
+| Mount Point | Size | Filesystem |
+| ------------ | ---- | ---------- |
+| `/boot` | 1 GiB | FAT32 |
+| `swap` | Match RAM | Linux Swap |
+| `/` | Remaining Space | Ext4 |
+
+Example (8 GB RAM):
+
+| Partition | Size |
+| ---------- | ---- |
+| EFI | 1 GiB |
+| Swap | 8 GiB |
+| Root | Remaining Disk |
+
+### Alternative Layout (Using zram)
+
+If you plan to use **zram**, a dedicated swap partition is unnecessary.
+
+| Mount Point | Size | Filesystem |
+| ------------ | ---- | ---------- |
+| `/boot` | 1 GiB | FAT32 |
+| `/` | Remaining Space | Ext4 |
+
+zram can be configured after installation.
+
+### Bootloader
+
+- **systemd-boot** — Single boot system
+- **GRUB** — Dual boot or multi boot system
+
+### Hostname
+
+Example:
 
 ```text
-.
-├── README.md
-├── docs
-│   ├── 01-arch-installation.md
-│   ├── 02-ml4w-installation.md
-│   ├── 03-sddm-setup.md
-│   ├── 04-custom-keybinds.md
-│   ├── 05-multimedia-tools.md
-│   ├── 06-fonts.md
-│   ├── 07-development-setup.md
-│   ├── 08-productivity-setup.md
-│   └── development
-│       ├── 01-nodejs-nvm.md
-│       ├── 02-postgresql.md
-│       ├── 03-php.md
-│       └── 04-docker.md
-│
-└── scripts
-    ├── custom-screenshot.sh
-    └── ...
+arch
 ```
+
+### User
+
+Create your primary user and enable:
+
+- Wheel
+- Sudo
+
+### Audio
+
+- PipeWire
+
+### Network
+
+- iwd (Default)
+
+### Timezone
+
+- Asia/Jakarta
+
+### NTP
+
+- Enabled
+
+### Desktop Environment
+
+- None
+
+ML4W will be installed after the base system.
+
+---
+
+## Step 4. Install Arch Linux
+
+Review the configuration.
+
+Select:
+
+```text
+Install
+```
+
+Wait until the installation is complete.
+
+---
+
+## Step 5. First Boot
+
+- Remove the installation media.
+- Boot into your new Arch Linux installation.
+
+---
+
+## Step 6. Post Installation
+
+Update the system.
+
+```bash
+sudo pacman -Syu
+```
+
+Install the essential packages.
+
+```bash
+sudo pacman -S \
+base-devel \
+git \
+curl \
+wget \
+zip \
+unzip
+```
+
+---
+
+## Verify
+
+Verify that the required packages are installed.
+
+```bash
+git --version
+curl --version
+wget --version
+```
+
+---
+
+## Notes
+
+> 💡 I use **Manual Partitioning** for better control over the installation.
+
+> 💡 I prefer **systemd-boot** for a single-boot system and **GRUB** only when dual booting.
+
+> 💡 I do not install a desktop environment here because ML4W will configure Hyprland later.
+
+---
+
+## Troubleshooting
+
+### ❌ No internet connection
+
+Verify your network connection.
+
+```bash
+ping archlinux.org
+```
+
+For Wi-Fi, reconnect using:
+
+```bash
+iwctl
+```
+
+### ❌ Installation failed
+
+Review your partition layout and ensure the EFI partition is formatted as **FAT32** and mounted at `/boot`.
+
+---
 
 ## Next
 

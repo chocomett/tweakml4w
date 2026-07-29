@@ -1,31 +1,30 @@
 # 🐧 tweakml4w
 
-> Personal documentation for installing Arch Linux from scratch with ML4W Dotfiles.
+> My personal Arch Linux setup and development handbook.
 
-This repository exists so I can reproduce my complete Arch Linux setup at any time without relying on memory.
+[![Arch Linux](https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white)](https://archlinux.org/)
+[![Hyprland](https://img.shields.io/badge/Hyprland-58E1FF?style=for-the-badge)](https://hypr.land/)
+[![ML4W](https://img.shields.io/badge/ML4W-Dotfiles-blue?style=for-the-badge)](https://www.ml4w.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
----
-
-# Goal
-
-Recreate my entire development environment from a clean Arch Linux installation until it becomes my fully customized workstation.
-
-Final result includes:
-
-- Arch Linux
-- ML4W Dotfiles
-- SDDM
-- Custom keybindings & scripts
-- Multimedia tools
-- Fonts
-- development tools
-- Productivity applications
+Personal documentation for installing Arch Linux from scratch with ML4W Dotfiles and setting up my complete development environment.
 
 ---
 
+## ✨ Features
+
+- 🐧 Arch Linux Installation
+- 🎨 ML4W Dotfiles
+- 🖥️ SDDM Setup
+- ⌨️ Custom Keybindings
+- 🎬 Multimedia Tools
+- 🔤 Fonts
+- 💻 Development Environment
+- 🚀 Productivity Applications
+
 ---
 
-# Repository Structure
+## 📂 Repository Structure
 
 ```text
 .
@@ -38,24 +37,16 @@ Final result includes:
 │   ├── 05-multimedia-tools.md
 │   ├── 06-fonts.md
 │   ├── 07-development-setup.md
-│   ├── 08-productivity-setup.md
-│   └── development
-│       ├── 01-nodejs-nvm.md
-│       ├── 02-postgresql.md
-│       ├── 03-php.md
-│       └── 04-docker.md
+│   ├── 07-development
+│   │   ├── 01-nodejs-nvm.md
+│   │   ├── 02-postgresql.md
+│   │   ├── 03-php.md
+│   │   ├── 04-docker.md
+│   │   ├── 05-python.md
+│   │   └── 06-zsh.md
+│   └── 08-productivity-setup.md
 │
 └── scripts
     ├── custom-screenshot.sh
     └── ...
 ```
-
-
-# References
-
-- [Arch Wiki](https://archinstall.archlinux.page/)
-- [ML4W Documentation](https://ml4w.com/os/getting-started/install)
-
-# Notes
-
-This repository is continuously updated whenever I change my Arch Linux setup.
