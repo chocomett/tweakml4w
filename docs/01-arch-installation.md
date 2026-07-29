@@ -1,172 +1,54 @@
-# 01. Arch Linux Installation
+# 🐧 tweakml4w
 
-This guide covers my standard Arch Linux installation before installing ML4W Dotfiles.
+> My personal Arch Linux setup and development handbook.
+
+[![Arch Linux](https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white)](https://archlinux.org/)
+[![Hyprland](https://img.shields.io/badge/Hyprland-58E1FF?style=for-the-badge)](https://hypr.land/)
+[![ML4W](https://img.shields.io/badge/ML4W-Dotfiles-blue?style=for-the-badge)](https://www.ml4w.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
+
+Personal documentation for installing Arch Linux from scratch with ML4W Dotfiles and setting up my complete development environment.
 
 ---
 
-# Boot
+## ✨ Features
 
-Boot the latest Arch Linux ISO in **UEFI mode**.
+- 🐧 Arch Linux Installation
+- 🎨 ML4W Dotfiles
+- 🖥️ SDDM Setup
+- ⌨️ Custom Keybindings
+- 🎬 Multimedia Tools
+- 🔤 Fonts
+- 💻 Development Environment
+- 🚀 Productivity Applications
 
-Verify internet connection.
+---
 
-```bash
-ping archlinux.org
+## 📂 Repository Structure
+
+```text
+.
+├── README.md
+├── docs
+│   ├── 01-arch-installation.md
+│   ├── 02-ml4w-installation.md
+│   ├── 03-sddm-setup.md
+│   ├── 04-custom-keybinds.md
+│   ├── 05-multimedia-tools.md
+│   ├── 06-fonts.md
+│   ├── 07-development-setup.md
+│   ├── 08-productivity-setup.md
+│   └── development
+│       ├── 01-nodejs-nvm.md
+│       ├── 02-postgresql.md
+│       ├── 03-php.md
+│       └── 04-docker.md
+│
+└── scripts
+    ├── custom-screenshot.sh
+    └── ...
 ```
 
-For Wi-Fi:
+## Next
 
-```bash
-iwctl
-```
-
----
-
-# Start Installer
-
-```bash
-archinstall
-```
-
----
-
-# Installation Configuration
-
-## Language
-
-- English
-
-## Mirrors
-
-- Indonesia
-
-## Disk Layout
-
-### Recommended Layout
-
-Use **Manual Partitioning**.
-
-| Mount Point | Size | Filesystem |
-| ------------ | ---- | ---------- |
-| `/boot` | 1 GiB | FAT32 |
-| `swap` | Match RAM | Linux Swap |
-| `/` | Remaining Space | Ext4 |
-
-Example (8 GB RAM):
-
-| Partition | Size |
-| ---------- | ---- |
-| EFI | 1 GiB |
-| Swap | 8 GiB |
-| Root | Remaining Disk |
-
-### Alternate Layout (Using zram)
-
-| Mount Point | Size | Filesystem |
-| ------------ | ---- | ---------- |
-| `/boot` | 1 GiB | FAT32 |
-| `/` | Remaining Space | Ext4 |
-
-zram will be configured later.
-
----
-
-## Bootloader
-
-- Systemd-boot → Single Boot
-- GRUB → Dual Boot / Multi Boot
-
----
-
-## Hostname
-
-Choose your preferred hostname.
-
----
-
-## User
-
-Create the primary user.
-
-Enable:
-
-- Wheel
-- Sudo
-
----
-
-## Audio
-
-- PipeWire
-
----
-
-## Network
-
-- iwd (Default)
-
----
-
-## Timezone
-
-- Asia/Jakarta
-
----
-
-## NTP
-
-- Enabled
-
----
-
-## Desktop
-
-- None
-
----
-
-# Install
-
-Review all settings.
-
-Select **Install**.
-
-Wait until installation finishes.
-
----
-
-# First Boot
-
-Remove the installation media.
-
-Reboot into Arch Linux.
-
----
-
-# Post Installation
-
-Update the system.
-
-```bash
-sudo pacman -Syu
-```
-
-Install required packages.
-
-```bash
-sudo pacman -S \
-base-devel \
-git \
-curl \
-wget \
-zip \
-unzip
-```
-
----
-
-# Next
-
-Continue with:
-
-> 02-ml4w-installation.md
+➡️ **02-ml4w-installation.md**

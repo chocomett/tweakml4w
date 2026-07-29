@@ -1,10 +1,14 @@
-# 01. Node.js & NVM
+# 🟢 01. Node.js & NVM
 
 This guide installs Node.js using NVM (Node Version Manager).
+
+**⏱️ Estimated Time:** 5–10 minutes
 
 ---
 
 ## Step 1. Install NVM
+
+Install NVM from the AUR.
 
 ```bash
 paru -S nvm
@@ -46,13 +50,17 @@ nvm alias default lts/*
 
 ## Step 4. Install pnpm
 
+Install pnpm globally.
+
 ```bash
 npm install -g pnpm
 ```
 
 ---
 
-## Step 5. Verify Installation
+## Verify
+
+Verify that Node.js, npm, pnpm, and NVM were installed successfully.
 
 ```bash
 nvm --version
@@ -63,47 +71,53 @@ pnpm -v
 
 ---
 
-# Useful Commands
+## Notes
 
-## List installed versions
+> 💡 Using **NVM** allows multiple Node.js versions to coexist and makes switching between projects much easier.
+
+> 💡 I always install the latest **LTS** release and set it as the default version.
+
+---
+
+## Useful Commands
+
+List installed versions.
 
 ```bash
 nvm ls
 ```
 
-## List available versions
+List available versions.
 
 ```bash
 nvm ls-remote
 ```
 
-## Install a specific version
+Install a specific version.
 
 ```bash
 nvm install 22
 ```
 
-## Switch version
+Switch to a different version.
 
 ```bash
 nvm use 22
 ```
 
-## Set default version
+Set the default version.
 
 ```bash
 nvm alias default 22
 ```
 
-## Remove a version
+Remove a version.
 
 ```bash
 nvm uninstall 20
 ```
 
----
-
-# Updating Node.js
+Update to the latest LTS version.
 
 ```bash
 nvm install --lts
@@ -113,9 +127,9 @@ nvm alias default lts/*
 
 ---
 
-# Troubleshooting
+## Troubleshooting
 
-### `nvm: command not found`
+### ❌ `nvm: command not found`
 
 Reload your shell.
 
@@ -128,3 +142,15 @@ or
 ```bash
 source ~/.bashrc
 ```
+
+Verify that NVM was loaded correctly.
+
+```bash
+command -v nvm
+```
+
+---
+
+## Next
+
+➡️ **02-postgresql.md**

@@ -1,10 +1,12 @@
-# 04. Custom Keybinds
+# ⌨️ 04. Custom Keybinds
 
 This guide covers the keybinding changes I always apply after installing ML4W.
 
+**⏱️ Estimated Time:** 10–20 minutes
+
 ---
 
-# 1. Open Terminal
+## Step 1. Open Terminal
 
 Move the terminal shortcut from **Super + Enter** to **Super + Q**.
 
@@ -26,7 +28,7 @@ hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd("~/.config/ml4w/settings/terminal.sh"
 
 ---
 
-# 2. Kill Active Window
+## Step 2. Kill Active Window
 
 Move the shortcut from **Super + Q** to **Super + C**.
 
@@ -48,9 +50,9 @@ hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("killactive"), {
 
 ---
 
-# 3. Toggle Spotlight Search
+## Step 3. Toggle Spotlight Search
 
-Add a new keybinding.
+Add the following keybinding.
 
 ```lua
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd([[sh -c 'pgrep -x rofi >/dev/null && pkill -x rofi || rofi -show combi -combi-modes "drun,run,window" -modi "drun,run,window" -show-icons']]), {
@@ -60,7 +62,7 @@ hl.bind(mainMod .. " + D", hl.dsp.exec_cmd([[sh -c 'pgrep -x rofi >/dev/null && 
 
 ---
 
-# 4. Custom Screenshot
+## Step 4. Custom Screenshot
 
 Replace the default screenshot keybindings.
 
@@ -78,7 +80,7 @@ hl.bind("ALT + S", hl.dsp.exec_cmd("~/.config/hypr/scripts/custom-screenshot.sh 
 })
 ```
 
-Script:
+Script location:
 
 ```text
 ~/.config/hypr/scripts/custom-screenshot.sh
@@ -86,8 +88,21 @@ Script:
 
 ---
 
-# Next
+## Verify
 
-Continue with:
+- ✅ **Super + Q** opens the terminal.
+- ✅ **Super + C** closes the active window.
+- ✅ **Super + D** toggles Rofi Spotlight Search.
+- ✅ **Print**, **Super + Shift + F**, and **Alt + S** trigger the custom screenshot script.
 
-> 05-multimedia-tools.md
+---
+
+## Notes
+
+> 💡 These keybindings are my personal preferences and may differ from the default ML4W configuration.
+
+---
+
+## Next
+
+➡️ **05-multimedia-tools.md**

@@ -1,8 +1,36 @@
+# 🎨 02. ML4W Installation
+
+This guide installs ML4W Dotfiles on a fresh Arch Linux installation.
+
+**⏱️ Estimated Time:** 15–30 minutes
+
 ---
 
-# Reboot
+## Step 1. Run the Installer
 
-Reboot the system after the installation completes.
+Execute the official ML4W installer.
+
+```bash
+bash <(curl -s https://raw.githubusercontent.com/mylinuxforwork/dotfiles/main/setup.sh)
+```
+
+---
+
+## Step 2. Select Package Helper
+
+Choose:
+
+```text
+paru
+```
+
+> 💡 **Tip**
+>
+> Always choose **paru**. The installer will automatically install and configure it.
+
+---
+
+## Step 3. Reboot
 
 ```bash
 reboot
@@ -10,19 +38,15 @@ reboot
 
 ---
 
-# First Login
+## Step 4. First Login
 
-Log in to **Hyprland**.
-
-Complete the initial ML4W setup if prompted.
-
-Open a terminal.
+- ✅ Log in to **Hyprland**
+- ✅ Complete the initial setup
+- ✅ Open a terminal
 
 ---
 
-# Essential Applications
-
-Install the applications used on every fresh installation.
+## Step 5. Install Essential Applications
 
 ```bash
 paru -S \
@@ -30,7 +54,9 @@ google-chrome \
 visual-studio-code-bin
 ```
 
-Verify installation.
+---
+
+## Verify
 
 ```bash
 google-chrome-stable --version
@@ -39,8 +65,20 @@ code --version
 
 ---
 
-# Next
+## Notes
 
-Continue with:
+> 📝 Install additional applications only after the ML4W setup is complete.
 
-> 03-sddm-setup.md
+---
+
+## Troubleshooting
+
+### ❌ `paru: command not found`
+
+Run the installer again and select **paru**.
+
+---
+
+## Next
+
+➡️ **03-sddm-setup.md**
